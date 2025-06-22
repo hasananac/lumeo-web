@@ -30,11 +30,7 @@ import CommunicationsPage from "./components/pages/CommunicationsPage";
 import MessagesPage from "./components/pages/MessagesPage";
 import MeetingsPage from "./components/pages/MeetingsPage";
 import DocumentsPage from "./components/pages/DocumentsPage";
-import SystemPage from "./components/pages/SystemPage";
-import SecurityPage from "./components/pages/SystemSecurityPage";
-import IntegrationsPage from "./components/pages/IntegrationsPage";
-import BackupPage from "./components/pages/BackupPage";
-import SystemSettingsPage from "./components/pages/SystemSettingsPage";
+
 import DoorEntryPage from "./components/pages/DoorEntryPage";
 import DoorExitPage from "./components/pages/DoorExitPage";
 
