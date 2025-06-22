@@ -269,7 +269,6 @@ import {
   Chair,
   Table,
   Lamp,
-  Door,
   DoorOpen,
   DoorClosed,
   LogIn,
