@@ -353,38 +353,6 @@ function AppContent() {
           />
         );
 
-      // Tasks Pages
-      case "tasks":
-        return (
-          <TasksPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-            onNavigateToPage={handleNavigateToPage}
-          />
-        );
-
-      case "pending-tasks":
-        return (
-          <PendingTasksPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-          />
-        );
-
-      case "in-progress-tasks":
-        return (
-          <InProgressTasksPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-          />
-        );
-
       // Finance Pages
       case "finance":
         return (
