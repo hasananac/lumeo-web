@@ -1590,22 +1590,22 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                     onClick={() => onShowProfile()}
                     className="w-full flex items-center space-x-2 p-2 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group text-left"
                   >
-                    <User className="w-4 h-4 transition-colors duration-300" />
-                    <span className="text-xs font-medium">
+                    <User className="w-4 h-4 transition-colors duration-300 group-hover:text-white" />
+                    <span className="text-xs font-medium transition-colors duration-300 group-hover:text-white">
                       {currentT.profile.profile}
                     </span>
-                    <ChevronRightIcon className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <ChevronRightIcon className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white" />
                   </button>
 
                   <button
                     onClick={() => onShowSettings()}
                     className="w-full flex items-center space-x-2 p-2 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group text-left"
                   >
-                    <Settings className="w-4 h-4 transition-colors duration-300" />
-                    <span className="text-xs font-medium">
+                    <Settings className="w-4 h-4 transition-colors duration-300 group-hover:text-white" />
+                    <span className="text-xs font-medium transition-colors duration-300 group-hover:text-white">
                       {currentT.profile.settings}
                     </span>
-                    <ChevronRightIcon className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <ChevronRightIcon className="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white" />
                   </button>
 
                   <button
