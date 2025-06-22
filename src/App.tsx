@@ -454,58 +454,6 @@ function AppContent() {
       case "door-exit":
         return <DoorExitPage />;
 
-      // System Pages
-      case "system":
-        return (
-          <SystemPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-            onNavigateToPage={handleNavigateToPage}
-          />
-        );
-
-      case "security":
-        return (
-          <SecurityPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-          />
-        );
-
-      case "integrations":
-        return (
-          <IntegrationsPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-          />
-        );
-
-      case "backup":
-        return (
-          <BackupPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-          />
-        );
-
-      case "system-settings":
-        return (
-          <SystemSettingsPage
-            language={language}
-            userInfo={userInfo}
-            onBack={handleBackToDashboard}
-            onLogout={handleLogout}
-          />
-        );
-
       default:
         return (
           <Dashboard
