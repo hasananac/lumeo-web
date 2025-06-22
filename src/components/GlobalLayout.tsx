@@ -1519,7 +1519,7 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
     {
       id: "door-access",
       title: currentT.sidebar.doorAccess,
-      icon: Door,
+      icon: DoorOpen,
       hasSubmenu: true,
       submenu: [
         {
