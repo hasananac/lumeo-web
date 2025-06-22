@@ -134,10 +134,12 @@ function AppContent() {
   };
 
   const handleShowProfile = () => {
+    console.log("handleShowProfile called, switching to profile page");
     setCurrentPage("profile");
   };
 
   const handleShowSettings = () => {
+    console.log("handleShowSettings called, switching to settings page");
     setCurrentPage("settings");
   };
 
