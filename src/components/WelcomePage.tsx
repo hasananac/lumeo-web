@@ -96,10 +96,23 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onLanguageSelect }) => {
           {/* Direct Test Buttons */}
           <div className="mt-4 space-y-2">
             <button
-              onClick={() => onLanguageSelect("tr")}
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg text-sm"
+              onClick={() => {
+                // Simulate login and go to dashboard
+                const mockUserData = {
+                  firstName: "Ahmet",
+                  lastName: "Yılmaz",
+                  email: "ahmet@company.com",
+                  companyName: "ABC Teknoloji Ltd.",
+                  phone: "+90 555 123 4567",
+                };
+                // Directly trigger login callback if it exists
+                if (onLanguageSelect) {
+                  onLanguageSelect("tr");
+                }
+              }}
+              className="w-full bg-red-500 text-white py-2 px-4 rounded-lg text-sm font-bold"
             >
-              Test: Direkt Giriş Yap
+              🚀 DOĞRUDAN ANA SAYFAYA GEÇ
             </button>
           </div>
         </div>
