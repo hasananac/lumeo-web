@@ -1506,14 +1506,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
       path: "projects",
     },
     {
-      id: "tasks",
-      title: "Görevler",
-      description: "Görev yönetimi",
-      category: "pages",
-      icon: CheckCircle,
-      path: "tasks",
-    },
-    {
       id: "customers",
       title: "Müşteriler",
       description: "Müşteri yönetimi",
