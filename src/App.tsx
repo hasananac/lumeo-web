@@ -1,47 +1,52 @@
-import React, { useState } from 'react';
-import WelcomePage from './components/WelcomePage';
-import AuthPage from './components/AuthPage';
-import ForgotPasswordPage from './components/ForgotPasswordPage';
-import TermsPage from './components/TermsPage';
-import PrivacyPage from './components/PrivacyPage';
-import Dashboard from './components/Dashboard';
-import ProfilePage from './components/ProfilePage';
-import SettingsPage from './components/SettingsPage';
-import SearchPage from './components/SearchPage';
-import NotificationsPage from './components/NotificationsPage';
-import GlobalLayout from './components/GlobalLayout';
+import React, { useState } from "react";
+import WelcomePage from "./components/WelcomePage";
+import AuthPage from "./components/AuthPage";
+import ForgotPasswordPage from "./components/ForgotPasswordPage";
+import TermsPage from "./components/TermsPage";
+import PrivacyPage from "./components/PrivacyPage";
+import Dashboard from "./components/Dashboard";
+import ProfilePage from "./components/ProfilePage";
+import SettingsPage from "./components/SettingsPage";
+import SearchPage from "./components/SearchPage";
+import NotificationsPage from "./components/NotificationsPage";
+import GlobalLayout from "./components/GlobalLayout";
 
 // Sidebar Pages
-import UsersPage from './components/pages/UsersPage';
-import EmployeesPage from './components/pages/EmployeesPage';
-import CustomersPage from './components/pages/CustomersPage';
-import SuppliersPage from './components/pages/SuppliersPage';
-import ProjectsPage from './components/pages/ProjectsPage';
-import ActiveProjectsPage from './components/pages/ActiveProjectsPage';
-import CompletedProjectsPage from './components/pages/CompletedProjectsPage';
-import ArchivedProjectsPage from './components/pages/ArchivedProjectsPage';
-import TasksPage from './components/pages/TasksPage';
-import PendingTasksPage from './components/pages/PendingTasksPage';
-import InProgressTasksPage from './components/pages/InProgressTasksPage';
-import FinancePage from './components/pages/FinancePage';
-import InvoicesPage from './components/pages/InvoicesPage';
-import PaymentsPage from './components/pages/PaymentsPage';
-import ExpensesPage from './components/pages/ExpensesPage';
-import OrdersPage from './components/pages/OrdersPage';
-import CommunicationsPage from './components/pages/CommunicationsPage';
-import MessagesPage from './components/pages/MessagesPage';
-import MeetingsPage from './components/pages/MeetingsPage';
-import DocumentsPage from './components/pages/DocumentsPage';
-import SystemPage from './components/pages/SystemPage';
-import SecurityPage from './components/pages/SystemSecurityPage';
-import IntegrationsPage from './components/pages/IntegrationsPage';
-import BackupPage from './components/pages/BackupPage';
-import SystemSettingsPage from './components/pages/SystemSettingsPage';
+import UsersPage from "./components/pages/UsersPage";
+import EmployeesPage from "./components/pages/EmployeesPage";
+import CustomersPage from "./components/pages/CustomersPage";
+import SuppliersPage from "./components/pages/SuppliersPage";
+import ProjectsPage from "./components/pages/ProjectsPage";
+import ActiveProjectsPage from "./components/pages/ActiveProjectsPage";
+import CompletedProjectsPage from "./components/pages/CompletedProjectsPage";
+import ArchivedProjectsPage from "./components/pages/ArchivedProjectsPage";
+import TasksPage from "./components/pages/TasksPage";
+import PendingTasksPage from "./components/pages/PendingTasksPage";
+import InProgressTasksPage from "./components/pages/InProgressTasksPage";
+import FinancePage from "./components/pages/FinancePage";
+import InvoicesPage from "./components/pages/InvoicesPage";
+import PaymentsPage from "./components/pages/PaymentsPage";
+import ExpensesPage from "./components/pages/ExpensesPage";
+import OrdersPage from "./components/pages/OrdersPage";
+import CommunicationsPage from "./components/pages/CommunicationsPage";
+import MessagesPage from "./components/pages/MessagesPage";
+import MeetingsPage from "./components/pages/MeetingsPage";
+import DocumentsPage from "./components/pages/DocumentsPage";
+import SystemPage from "./components/pages/SystemPage";
+import SecurityPage from "./components/pages/SystemSecurityPage";
+import IntegrationsPage from "./components/pages/IntegrationsPage";
+import BackupPage from "./components/pages/BackupPage";
+import SystemSettingsPage from "./components/pages/SystemSettingsPage";
+import DoorEntryPage from "./components/pages/DoorEntryPage";
+import DoorExitPage from "./components/pages/DoorExitPage";
 
-import { AppearanceProvider } from './components/AppearanceProvider';
-import { ThemeProvider } from './components/ThemeProvider';
-import { LanguageProvider, useLanguageContext } from './components/LanguageProvider';
-import { Language } from './types';
+import { AppearanceProvider } from "./components/AppearanceProvider";
+import { ThemeProvider } from "./components/ThemeProvider";
+import {
+  LanguageProvider,
+  useLanguageContext,
+} from "./components/LanguageProvider";
+import { Language } from "./types";
 
 interface UserInfo {
   firstName: string;
@@ -51,91 +56,118 @@ interface UserInfo {
   phone: string;
 }
 
-type PageType = 
-  | 'welcome' | 'auth' | 'forgot-password' | 'terms' | 'privacy' | 'dashboard' 
-  | 'profile' | 'settings' | 'search' | 'notifications'
+type PageType =
+  | "welcome"
+  | "auth"
+  | "forgot-password"
+  | "terms"
+  | "privacy"
+  | "dashboard"
+  | "profile"
+  | "settings"
+  | "search"
+  | "notifications"
   // Users
-  | 'users' | 'employees' | 'customers' | 'suppliers'
+  | "users"
+  | "employees"
+  | "customers"
+  | "suppliers"
   // Projects
-  | 'projects' | 'active-projects' | 'completed-projects' | 'archived-projects'
+  | "projects"
+  | "active-projects"
+  | "completed-projects"
+  | "archived-projects"
   // Tasks
-  | 'tasks' | 'pending-tasks' | 'in-progress-tasks'
+  | "tasks"
+  | "pending-tasks"
+  | "in-progress-tasks"
   // Finance
-  | 'finance' | 'invoices' | 'payments' | 'expenses' | 'orders'
+  | "finance"
+  | "invoices"
+  | "payments"
+  | "expenses"
+  | "orders"
   // Communications
-  | 'communications' | 'messages' | 'meetings' | 'documents'
+  | "communications"
+  | "messages"
+  | "meetings"
+  | "documents"
   // System
-  | 'system' | 'security' | 'integrations' | 'backup' | 'system-settings';
+  | "system"
+  | "security"
+  | "integrations"
+  | "backup"
+  | "system-settings";
 
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState<PageType>('welcome');
+  const [currentPage, setCurrentPage] = useState<PageType>("welcome");
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
   const { language, changeLanguage } = useLanguageContext();
 
   const handleLanguageSelect = (selectedLanguage: Language) => {
     changeLanguage(selectedLanguage);
-    setCurrentPage('auth');
+    setCurrentPage("auth");
   };
 
   const handleBackToWelcome = () => {
-    setCurrentPage('welcome');
+    setCurrentPage("welcome");
   };
 
   const handleForgotPassword = () => {
-    setCurrentPage('forgot-password');
+    setCurrentPage("forgot-password");
   };
 
   const handleBackToAuth = () => {
-    setCurrentPage('auth');
+    setCurrentPage("auth");
   };
 
   const handleShowTerms = () => {
-    setCurrentPage('terms');
+    setCurrentPage("terms");
   };
 
   const handleShowPrivacy = () => {
-    setCurrentPage('privacy');
+    setCurrentPage("privacy");
   };
 
   const handleBackFromTermsOrPrivacy = () => {
-    setCurrentPage('auth');
+    setCurrentPage("auth");
   };
 
   const handleLogin = (userData: UserInfo) => {
     setUserInfo(userData);
-    setCurrentPage('dashboard');
+    setCurrentPage("dashboard");
   };
 
   const handleLogout = () => {
     setUserInfo(null);
-    setCurrentPage('welcome');
-    setSearchQuery('');
+    setCurrentPage("welcome");
+    setSearchQuery("");
   };
 
   const handleShowProfile = () => {
-    setCurrentPage('profile');
+    setCurrentPage("profile");
   };
 
   const handleShowSettings = () => {
-    setCurrentPage('settings');
+    setCurrentPage("settings");
   };
 
   const handleShowSearch = (query?: string) => {
     if (query) {
       setSearchQuery(query);
     }
-    setCurrentPage('search');
+    setCurrentPage("search");
   };
 
   const handleShowNotifications = () => {
-    setCurrentPage('notifications');
+    setCurrentPage("notifications");
   };
 
   const handleBackToDashboard = () => {
-    setCurrentPage('dashboard');
-    setSearchQuery('');
+    setCurrentPage("dashboard");
+    setSearchQuery("");
   };
 
   const handleUpdateProfile = (updatedInfo: UserInfo) => {
@@ -148,19 +180,19 @@ function AppContent() {
   };
 
   // Pages that don't need the global layout (auth flow)
-  const authPages = ['welcome', 'auth', 'forgot-password', 'terms', 'privacy'];
+  const authPages = ["welcome", "auth", "forgot-password", "terms", "privacy"];
   const isAuthPage = authPages.includes(currentPage);
 
   // Render auth pages without layout
   if (isAuthPage) {
     return (
       <>
-        {currentPage === 'welcome' && (
+        {currentPage === "welcome" && (
           <WelcomePage onLanguageSelect={handleLanguageSelect} />
         )}
-        {currentPage === 'auth' && (
-          <AuthPage 
-            language={language} 
+        {currentPage === "auth" && (
+          <AuthPage
+            language={language}
             onBack={handleBackToWelcome}
             onForgotPassword={handleForgotPassword}
             onShowTerms={handleShowTerms}
@@ -168,21 +200,18 @@ function AppContent() {
             onLogin={handleLogin}
           />
         )}
-        {currentPage === 'forgot-password' && (
-          <ForgotPasswordPage 
-            language={language} 
-            onBack={handleBackToAuth}
-          />
+        {currentPage === "forgot-password" && (
+          <ForgotPasswordPage language={language} onBack={handleBackToAuth} />
         )}
-        {currentPage === 'terms' && (
-          <TermsPage 
-            language={language} 
+        {currentPage === "terms" && (
+          <TermsPage
+            language={language}
             onBack={handleBackFromTermsOrPrivacy}
           />
         )}
-        {currentPage === 'privacy' && (
-          <PrivacyPage 
-            language={language} 
+        {currentPage === "privacy" && (
+          <PrivacyPage
+            language={language}
             onBack={handleBackFromTermsOrPrivacy}
           />
         )}
@@ -197,9 +226,9 @@ function AppContent() {
 
   const renderPageContent = () => {
     switch (currentPage) {
-      case 'dashboard':
+      case "dashboard":
         return (
-          <Dashboard 
+          <Dashboard
             language={language}
             userInfo={userInfo}
             onLogout={handleLogout}
@@ -211,9 +240,9 @@ function AppContent() {
           />
         );
 
-      case 'profile':
+      case "profile":
         return (
-          <ProfilePage 
+          <ProfilePage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -222,9 +251,9 @@ function AppContent() {
           />
         );
 
-      case 'settings':
+      case "settings":
         return (
-          <SettingsPage 
+          <SettingsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -232,9 +261,9 @@ function AppContent() {
           />
         );
 
-      case 'search':
+      case "search":
         return (
-          <SearchPage 
+          <SearchPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -243,9 +272,9 @@ function AppContent() {
           />
         );
 
-      case 'notifications':
+      case "notifications":
         return (
-          <NotificationsPage 
+          <NotificationsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -254,9 +283,9 @@ function AppContent() {
         );
 
       // Users Pages
-      case 'users':
+      case "users":
         return (
-          <UsersPage 
+          <UsersPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -265,9 +294,9 @@ function AppContent() {
           />
         );
 
-      case 'employees':
+      case "employees":
         return (
-          <EmployeesPage 
+          <EmployeesPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -275,9 +304,9 @@ function AppContent() {
           />
         );
 
-      case 'customers':
+      case "customers":
         return (
-          <CustomersPage 
+          <CustomersPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -285,9 +314,9 @@ function AppContent() {
           />
         );
 
-      case 'suppliers':
+      case "suppliers":
         return (
-          <SuppliersPage 
+          <SuppliersPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -296,9 +325,9 @@ function AppContent() {
         );
 
       // Projects Pages
-      case 'projects':
+      case "projects":
         return (
-          <ProjectsPage 
+          <ProjectsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -307,9 +336,9 @@ function AppContent() {
           />
         );
 
-      case 'active-projects':
+      case "active-projects":
         return (
-          <ActiveProjectsPage 
+          <ActiveProjectsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -317,9 +346,9 @@ function AppContent() {
           />
         );
 
-      case 'completed-projects':
+      case "completed-projects":
         return (
-          <CompletedProjectsPage 
+          <CompletedProjectsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -327,9 +356,9 @@ function AppContent() {
           />
         );
 
-      case 'archived-projects':
+      case "archived-projects":
         return (
-          <ArchivedProjectsPage 
+          <ArchivedProjectsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -338,9 +367,9 @@ function AppContent() {
         );
 
       // Tasks Pages
-      case 'tasks':
+      case "tasks":
         return (
-          <TasksPage 
+          <TasksPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -349,9 +378,9 @@ function AppContent() {
           />
         );
 
-      case 'pending-tasks':
+      case "pending-tasks":
         return (
-          <PendingTasksPage 
+          <PendingTasksPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -359,9 +388,9 @@ function AppContent() {
           />
         );
 
-      case 'in-progress-tasks':
+      case "in-progress-tasks":
         return (
-          <InProgressTasksPage 
+          <InProgressTasksPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -370,9 +399,9 @@ function AppContent() {
         );
 
       // Finance Pages
-      case 'finance':
+      case "finance":
         return (
-          <FinancePage 
+          <FinancePage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -381,9 +410,9 @@ function AppContent() {
           />
         );
 
-      case 'invoices':
+      case "invoices":
         return (
-          <InvoicesPage 
+          <InvoicesPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -391,9 +420,9 @@ function AppContent() {
           />
         );
 
-      case 'payments':
+      case "payments":
         return (
-          <PaymentsPage 
+          <PaymentsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -401,9 +430,9 @@ function AppContent() {
           />
         );
 
-      case 'expenses':
+      case "expenses":
         return (
-          <ExpensesPage 
+          <ExpensesPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -411,9 +440,9 @@ function AppContent() {
           />
         );
 
-      case 'orders':
+      case "orders":
         return (
-          <OrdersPage 
+          <OrdersPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -422,9 +451,9 @@ function AppContent() {
         );
 
       // Communications Pages
-      case 'communications':
+      case "communications":
         return (
-          <CommunicationsPage 
+          <CommunicationsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -433,9 +462,9 @@ function AppContent() {
           />
         );
 
-      case 'messages':
+      case "messages":
         return (
-          <MessagesPage 
+          <MessagesPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -443,9 +472,9 @@ function AppContent() {
           />
         );
 
-      case 'meetings':
+      case "meetings":
         return (
-          <MeetingsPage 
+          <MeetingsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -453,9 +482,9 @@ function AppContent() {
           />
         );
 
-      case 'documents':
+      case "documents":
         return (
-          <DocumentsPage 
+          <DocumentsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -464,9 +493,9 @@ function AppContent() {
         );
 
       // System Pages
-      case 'system':
+      case "system":
         return (
-          <SystemPage 
+          <SystemPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -475,9 +504,9 @@ function AppContent() {
           />
         );
 
-      case 'security':
+      case "security":
         return (
-          <SecurityPage 
+          <SecurityPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -485,9 +514,9 @@ function AppContent() {
           />
         );
 
-      case 'integrations':
+      case "integrations":
         return (
-          <IntegrationsPage 
+          <IntegrationsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -495,9 +524,9 @@ function AppContent() {
           />
         );
 
-      case 'backup':
+      case "backup":
         return (
-          <BackupPage 
+          <BackupPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -505,9 +534,9 @@ function AppContent() {
           />
         );
 
-      case 'system-settings':
+      case "system-settings":
         return (
-          <SystemSettingsPage 
+          <SystemSettingsPage
             language={language}
             userInfo={userInfo}
             onBack={handleBackToDashboard}
@@ -517,7 +546,7 @@ function AppContent() {
 
       default:
         return (
-          <Dashboard 
+          <Dashboard
             language={language}
             userInfo={userInfo}
             onLogout={handleLogout}
