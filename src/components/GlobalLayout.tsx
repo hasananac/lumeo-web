@@ -1049,10 +1049,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         doorAccess: "Door Access",
         doorEntry: "Entry",
         doorExit: "Exit",
-        settings: "Settings",
-        security: "Security",
-        integrations: "Integrations",
-        backup: "Backup",
         profile: "Profile",
       },
       profile: {
