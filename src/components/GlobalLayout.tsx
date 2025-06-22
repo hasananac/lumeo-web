@@ -1851,7 +1851,12 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                     <div className="p-2">
                       {/* Profile */}
                       <button
-                        onClick={() => handleProfileMenuClick("profile")}
+                        onClick={(e) => {
+                          console.log("Profile button clicked!");
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleProfileMenuClick("profile");
+                        }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
                         <User className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
@@ -1863,7 +1868,12 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
 
                       {/* Settings */}
                       <button
-                        onClick={() => handleProfileMenuClick("settings")}
+                        onClick={(e) => {
+                          console.log("Settings button clicked!");
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleProfileMenuClick("settings");
+                        }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
                         <Settings className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
@@ -1878,7 +1888,12 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
 
                       {/* Logout */}
                       <button
-                        onClick={() => handleProfileMenuClick("logout")}
+                        onClick={(e) => {
+                          console.log("Logout button clicked!");
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleProfileMenuClick("logout");
+                        }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-300 group cursor-pointer"
                       >
                         <LogOut className="w-5 h-5 transition-colors duration-300" />
