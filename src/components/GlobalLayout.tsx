@@ -1504,38 +1504,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         },
       ],
     },
-    {
-      id: "system",
-      title: currentT.sidebar.system,
-      icon: Settings,
-      hasSubmenu: true,
-      submenu: [
-        {
-          id: "settings",
-          title: currentT.sidebar.settings,
-          icon: Settings,
-          path: "settings",
-        },
-        {
-          id: "security",
-          title: currentT.sidebar.security,
-          icon: Shield,
-          path: "security",
-        },
-        {
-          id: "integrations",
-          title: currentT.sidebar.integrations,
-          icon: Globe,
-          path: "integrations",
-        },
-        {
-          id: "backup",
-          title: currentT.sidebar.backup,
-          icon: Database,
-          path: "backup",
-        },
-      ],
-    },
   ];
 
   // Mock search data
