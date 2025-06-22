@@ -1384,13 +1384,13 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
   const handleHeaderProfileClick = () => {
     console.log("Header profile clicked");
     setShowProfileDropdown(false);
-    onShowProfile();
+    onNavigateToPage("profile");
   };
 
   const handleHeaderSettingsClick = () => {
     console.log("Header settings clicked");
     setShowProfileDropdown(false);
-    onShowSettings();
+    onNavigateToPage("settings");
   };
 
   const handleHeaderLogoutClick = () => {
