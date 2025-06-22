@@ -1171,38 +1171,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
       ],
     },
     {
-      id: "tasks",
-      title: currentT.sidebar.tasks,
-      icon: CheckCircle,
-      hasSubmenu: true,
-      submenu: [
-        {
-          id: "pending-tasks",
-          title: currentT.sidebar.pendingTasks,
-          icon: Clock,
-          path: "pending-tasks",
-        },
-        {
-          id: "in-progress-tasks",
-          title: currentT.sidebar.inProgressTasks,
-          icon: Activity,
-          path: "in-progress-tasks",
-        },
-        {
-          id: "completed-tasks",
-          title: currentT.sidebar.completedTasks,
-          icon: CheckCircle,
-          path: "completed-tasks",
-        },
-        {
-          id: "task-templates",
-          title: currentT.sidebar.taskTemplates,
-          icon: FileText,
-          path: "task-templates",
-        },
-      ],
-    },
-    {
       id: "finance",
       title: currentT.sidebar.finance,
       icon: DollarSign,
