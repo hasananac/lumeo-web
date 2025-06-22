@@ -96,16 +96,15 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onLanguageSelect }) => {
           {/* Direct Test Buttons */}
           <div className="mt-4 space-y-2">
             <button
-              onClick={() => alert("TEST ÇALIŞIYOR!")}
-              className="w-full bg-green-500 text-white py-3 px-4 rounded-lg text-lg font-bold"
+              onClick={() => {
+                // Force navigation to dashboard
+                window.history.pushState({}, "", "/dashboard");
+                window.location.href = "#dashboard";
+                alert("Dashboard'a yönlendiriliyor...");
+              }}
+              className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg text-lg font-bold"
             >
-              ✅ TEST BUTONU
-            </button>
-            <button
-              onClick={() => window.location.reload()}
-              className="w-full bg-red-500 text-white py-2 px-4 rounded-lg text-sm"
-            >
-              🔄 SAYFAYI YENİLE
+              🏠 DASHBOARD'A GEÇ
             </button>
           </div>
         </div>
