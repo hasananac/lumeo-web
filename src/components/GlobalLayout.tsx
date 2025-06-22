@@ -1871,10 +1871,10 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                       {/* Profile */}
                       <button
                         onClick={(e) => {
-                          console.log("Profile button clicked!");
+                          console.log("Header Profile button clicked!");
                           e.preventDefault();
                           e.stopPropagation();
-                          handleProfileMenuClick("profile");
+                          handleHeaderProfileClick();
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
@@ -1888,10 +1888,10 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                       {/* Settings */}
                       <button
                         onClick={(e) => {
-                          console.log("Settings button clicked!");
+                          console.log("Header Settings button clicked!");
                           e.preventDefault();
                           e.stopPropagation();
-                          handleProfileMenuClick("settings");
+                          handleHeaderSettingsClick();
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
@@ -1908,10 +1908,10 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                       {/* Logout */}
                       <button
                         onClick={(e) => {
-                          console.log("Logout button clicked!");
+                          console.log("Header Logout button clicked!");
                           e.preventDefault();
                           e.stopPropagation();
-                          handleProfileMenuClick("logout");
+                          handleHeaderLogoutClick();
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-300 group cursor-pointer"
                       >
