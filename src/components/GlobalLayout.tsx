@@ -1870,11 +1870,11 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                         onClick={() => handleProfileMenuClick("profile")}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
-                        <User className="w-5 h-5 transition-colors duration-300" />
-                        <span className="font-medium text-sm">
+                        <User className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
+                        <span className="font-medium text-sm transition-colors duration-300 group-hover:text-white">
                           {currentT.profile.profile}
                         </span>
-                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white" />
                       </button>
 
                       {/* Settings */}
@@ -1882,16 +1882,12 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                         onClick={() => handleProfileMenuClick("settings")}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
-                        <Settings className="w-5 h-5 transition-colors duration-300" />
-                        <span className="font-medium text-sm">
+                        <Settings className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
+                        <span className="font-medium text-sm transition-colors duration-300 group-hover:text-white">
                           {currentT.profile.settings}
                         </span>
-                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white" />
                       </button>
-
-                      {/* Divider */}
-                      <div className="border-t border-slate-200/50 my-2"></div>
-
                       {/* Logout */}
                       <button
                         onClick={() => handleProfileMenuClick("logout")}
