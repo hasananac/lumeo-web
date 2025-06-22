@@ -1838,5 +1838,3 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
 };
 
 export default GlobalLayout;
-
-export default GlobalLayout;
