@@ -958,10 +958,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         doorAccess: "Kapı Giriş-Çıkış",
         doorEntry: "Giriş",
         doorExit: "Çıkış",
-        settings: "Ayarlar",
-        security: "Güvenlik",
-        integrations: "Entegrasyonlar",
-        backup: "Yedekleme",
         profile: "Profil",
       },
       profile: {
