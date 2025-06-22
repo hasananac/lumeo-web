@@ -1501,14 +1501,16 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         {/* Collapsed Sidebar Hover Submenu - SMALLER FONT SIZE */}
         {hasSubmenu && !isSidebarExpanded && isHovered && !isMobile && (
           <div
-            className="fixed left-16 bg-white/95 backdrop-blur-lg rounded-xl shadow-xl border border-slate-200/50 animate-fade-in-up"
+            className="fixed left-16 bg-white backdrop-blur-xl rounded-xl shadow-2xl border border-slate-300 animate-fade-in-up"
             style={{
               top: `${document.querySelector(`[data-menu-id="${item.id}"]`)?.getBoundingClientRect().top || 0}px`,
               zIndex: 9999,
               width: "256px",
               maxHeight: "400px",
               overflowY: "auto",
-              backgroundColor: "rgba(255, 255, 255, 0.98)",
+              backgroundColor: "rgba(255, 255, 255, 1)",
+              boxShadow:
+                "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05)",
             }}
             onMouseEnter={handleSubmenuMouseEnter}
             onMouseLeave={handleSubmenuMouseLeave}
