@@ -97,14 +97,13 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onLanguageSelect }) => {
           <div className="mt-4 space-y-2">
             <button
               onClick={() => {
-                // Force navigation to dashboard
-                window.history.pushState({}, "", "/dashboard");
-                window.location.href = "#dashboard";
-                alert("Dashboard'a yönlendiriliyor...");
+                // Trigger the real navigation callback to go to auth then dashboard
+                setSelectedLanguage("tr");
+                onLanguageSelect("tr");
               }}
-              className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg text-lg font-bold"
+              className="w-full bg-orange-600 text-white py-3 px-4 rounded-lg text-lg font-bold"
             >
-              🏠 DASHBOARD'A GEÇ
+              🚀 GERÇEK DASHBOARD GEÇİŞİ
             </button>
           </div>
         </div>
