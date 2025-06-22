@@ -1871,8 +1871,8 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                       {/* Profile */}
                       <button
                         onClick={() => {
+                          alert("Profil sayfasına geçiliyor...");
                           setShowProfileDropdown(false);
-                          window.location.hash = "#profile";
                           onNavigateToPage("profile");
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
@@ -1887,8 +1887,8 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                       {/* Settings */}
                       <button
                         onClick={() => {
+                          alert("Ayarlar sayfasına geçiliyor...");
                           setShowProfileDropdown(false);
-                          window.location.hash = "#settings";
                           onNavigateToPage("settings");
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
