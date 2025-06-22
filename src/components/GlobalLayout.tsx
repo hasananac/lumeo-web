@@ -1380,6 +1380,25 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
     }
   };
 
+  // Header-specific profile handlers to avoid conflict with sidebar
+  const handleHeaderProfileClick = () => {
+    console.log("Header profile clicked");
+    setShowProfileDropdown(false);
+    onShowProfile();
+  };
+
+  const handleHeaderSettingsClick = () => {
+    console.log("Header settings clicked");
+    setShowProfileDropdown(false);
+    onShowSettings();
+  };
+
+  const handleHeaderLogoutClick = () => {
+    console.log("Header logout clicked");
+    setShowProfileDropdown(false);
+    onLogout();
+  };
+
   const handleMenuItemMouseEnter = (item: any) => {
     if (!isSidebarExpanded && item.hasSubmenu && !isMobile) {
       // Clear any existing timeout
