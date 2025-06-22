@@ -92,20 +92,6 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onLanguageSelect }) => {
           >
             {selectedLanguage === "tr" ? "Devam Et" : "Continue"}
           </button>
-
-          {/* Direct Test Buttons */}
-          <div className="mt-4 space-y-2">
-            <button
-              onClick={() => {
-                // Trigger the real navigation callback to go to auth then dashboard
-                setSelectedLanguage("tr");
-                onLanguageSelect("tr");
-              }}
-              className="w-full bg-orange-600 text-white py-3 px-4 rounded-lg text-lg font-bold"
-            >
-              🚀 GERÇEK DASHBOARD GEÇİŞİ
-            </button>
-          </div>
         </div>
       </div>
     </div>
