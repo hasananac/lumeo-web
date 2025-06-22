@@ -1843,26 +1843,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                 {/* Profile Dropdown Menu - Header */}
                 {showProfileDropdown && (
                   <div className="absolute right-0 top-full mt-2 w-64 glass-card rounded-xl shadow-lg border border-slate-200/50 animate-fade-in-up z-50">
-                    {/* User Info Header */}
-                    <div className="p-4 border-b border-slate-200/50">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center">
-                          <User className="w-5 h-5 text-white" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-semibold text-slate-800 truncate">
-                            {userInfo.firstName} {userInfo.lastName}
-                          </p>
-                          <p className="text-sm text-slate-500 truncate">
-                            {userInfo.email}
-                          </p>
-                          <p className="text-xs text-slate-400 truncate">
-                            {userInfo.companyName}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
                     {/* Menu Items */}
                     <div className="p-2">
                       {/* Profile */}
