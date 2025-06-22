@@ -989,7 +989,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         homepage: "Homepage",
         projects: "Projects",
         jobs: "Jobs",
-        tasks: "Tasks",
         finance: "Finance",
         crm: "CRM",
         production: "Production",
