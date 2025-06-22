@@ -20,9 +20,7 @@ import ProjectsPage from "./components/pages/ProjectsPage";
 import ActiveProjectsPage from "./components/pages/ActiveProjectsPage";
 import CompletedProjectsPage from "./components/pages/CompletedProjectsPage";
 import ArchivedProjectsPage from "./components/pages/ArchivedProjectsPage";
-import TasksPage from "./components/pages/TasksPage";
-import PendingTasksPage from "./components/pages/PendingTasksPage";
-import InProgressTasksPage from "./components/pages/InProgressTasksPage";
+
 import FinancePage from "./components/pages/FinancePage";
 import InvoicesPage from "./components/pages/InvoicesPage";
 import PaymentsPage from "./components/pages/PaymentsPage";
