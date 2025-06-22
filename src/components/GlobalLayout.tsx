@@ -1001,7 +1001,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         vehicles: "Vehicles",
         documents: "Documents",
         communication: "Communication",
-        system: "System",
         // Sub menus
         activeProjects: "Active Projects",
         completedProjects: "Completed Projects",
