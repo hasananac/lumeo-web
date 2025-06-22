@@ -92,20 +92,6 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onLanguageSelect }) => {
           >
             {selectedLanguage === "tr" ? "Devam Et" : "Continue"}
           </button>
-
-          {/* Test Button for Profile Functions */}
-          <button
-            onClick={() => {
-              console.log("Test profile function called");
-              if (onLanguageSelect) {
-                console.log("Profile function works!");
-                alert("Profile function works!");
-              }
-            }}
-            className="w-full mt-3 bg-gray-500 text-white py-2 px-4 rounded-lg text-sm"
-          >
-            TEST: Profil Fonksiyon Testi
-          </button>
         </div>
       </div>
     </div>
