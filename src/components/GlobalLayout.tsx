@@ -1870,11 +1870,9 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
                     <div className="p-2">
                       {/* Profile */}
                       <button
-                        onClick={(e) => {
-                          console.log("Header Profile button clicked!");
-                          e.preventDefault();
-                          e.stopPropagation();
-                          handleHeaderProfileClick();
+                        onClick={() => {
+                          setShowProfileDropdown(false);
+                          onNavigateToPage("profile");
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
@@ -1887,11 +1885,9 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
 
                       {/* Settings */}
                       <button
-                        onClick={(e) => {
-                          console.log("Header Settings button clicked!");
-                          e.preventDefault();
-                          e.stopPropagation();
-                          handleHeaderSettingsClick();
+                        onClick={() => {
+                          setShowProfileDropdown(false);
+                          onNavigateToPage("settings");
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
                       >
@@ -1907,11 +1903,9 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
 
                       {/* Logout */}
                       <button
-                        onClick={(e) => {
-                          console.log("Header Logout button clicked!");
-                          e.preventDefault();
-                          e.stopPropagation();
-                          handleHeaderLogoutClick();
+                        onClick={() => {
+                          setShowProfileDropdown(false);
+                          onLogout();
                         }}
                         className="w-full flex items-center space-x-3 p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-300 group cursor-pointer"
                       >
