@@ -495,6 +495,13 @@ function AppContent() {
           />
         );
 
+      // Door Access Pages
+      case "door-entry":
+        return <DoorEntryPage />;
+
+      case "door-exit":
+        return <DoorExitPage />;
+
       // System Pages
       case "system":
         return (
