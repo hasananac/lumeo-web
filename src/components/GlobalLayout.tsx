@@ -1815,7 +1815,99 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
             </div>
 
             {/* Right Side Actions */}
-            <div className="flex items-center space-x-2"></div>
+            <div className="flex items-center space-x-2">
+              {/* User Profile with Dropdown - Header */}
+              <div className="relative">
+                <button
+                  onClick={handleProfileClick}
+                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-slate-100 transition-colors duration-300 group"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center">
+                    <User className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="hidden md:block text-left">
+                    <p className="font-semibold text-slate-800 text-sm">
+                      {userInfo.firstName} {userInfo.lastName}
+                    </p>
+                    <p className="text-xs text-slate-500 truncate max-w-[120px]">
+                      {userInfo.email}
+                    </p>
+                  </div>
+                  <ChevronDown
+                    className={`w-3 h-3 text-slate-400 hidden md:block transition-transform duration-300 ${
+                      showProfileDropdown ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Profile Dropdown Menu - Header */}
+                {showProfileDropdown && (
+                  <div className="absolute right-0 top-full mt-2 w-64 glass-card rounded-xl shadow-lg border border-slate-200/50 animate-fade-in-up z-50">
+                    {/* User Info Header */}
+                    <div className="p-4 border-b border-slate-200/50">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center">
+                          <User className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-slate-800 truncate">
+                            {userInfo.firstName} {userInfo.lastName}
+                          </p>
+                          <p className="text-sm text-slate-500 truncate">
+                            {userInfo.email}
+                          </p>
+                          <p className="text-xs text-slate-400 truncate">
+                            {userInfo.companyName}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Menu Items */}
+                    <div className="p-2">
+                      {/* Profile */}
+                      <button
+                        onClick={() => handleProfileMenuClick("profile")}
+                        className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
+                      >
+                        <User className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
+                        <span className="font-medium text-sm transition-colors duration-300 group-hover:text-white">
+                          {currentT.profile.profile}
+                        </span>
+                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white" />
+                      </button>
+
+                      {/* Settings */}
+                      <button
+                        onClick={() => handleProfileMenuClick("settings")}
+                        className="w-full flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-teal-500 hover:text-white transition-all duration-300 group cursor-pointer"
+                      >
+                        <Settings className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
+                        <span className="font-medium text-sm transition-colors duration-300 group-hover:text-white">
+                          {currentT.profile.settings}
+                        </span>
+                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white" />
+                      </button>
+
+                      {/* Divider */}
+                      <div className="border-t border-slate-200/50 my-2"></div>
+
+                      {/* Logout */}
+                      <button
+                        onClick={() => handleProfileMenuClick("logout")}
+                        className="w-full flex items-center space-x-3 p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-300 group cursor-pointer"
+                      >
+                        <LogOut className="w-5 h-5 transition-colors duration-300" />
+                        <span className="font-medium text-sm">
+                          {currentT.profile.logout}
+                        </span>
+                        <ChevronRightIcon className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </header>
 
