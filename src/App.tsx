@@ -84,13 +84,7 @@ type PageType =
   | "documents"
   // Door Access
   | "door-entry"
-  | "door-exit"
-  // System
-  | "system"
-  | "security"
-  | "integrations"
-  | "backup"
-  | "system-settings";
+  | "door-exit";
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<PageType>("welcome");
