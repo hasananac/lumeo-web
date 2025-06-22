@@ -71,10 +71,6 @@ type PageType =
   | "active-projects"
   | "completed-projects"
   | "archived-projects"
-  // Tasks
-  | "tasks"
-  | "pending-tasks"
-  | "in-progress-tasks"
   // Finance
   | "finance"
   | "invoices"
