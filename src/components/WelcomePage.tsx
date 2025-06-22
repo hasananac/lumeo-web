@@ -92,6 +92,16 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onLanguageSelect }) => {
           >
             {selectedLanguage === "tr" ? "Devam Et" : "Continue"}
           </button>
+
+          {/* Direct Test Buttons */}
+          <div className="mt-4 space-y-2">
+            <button
+              onClick={() => onLanguageSelect("tr")}
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg text-sm"
+            >
+              Test: Direkt Giriş Yap
+            </button>
+          </div>
         </div>
       </div>
     </div>
