@@ -214,6 +214,7 @@ function AppContent() {
   }
 
   const renderPageContent = () => {
+    console.log("Current page:", currentPage);
     switch (currentPage) {
       case "dashboard":
         return (
