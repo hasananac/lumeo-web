@@ -910,7 +910,6 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         vehicles: "Taşıtlar",
         documents: "Belgeler",
         communication: "İletişim",
-        system: "Sistem",
         // Alt menüler
         activeProjects: "Aktif Projeler",
         completedProjects: "Tamamlanan Projeler",
@@ -923,7 +922,7 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         pendingTasks: "Bekleyen Görevler",
         inProgressTasks: "Devam Eden Görevler",
         completedTasks: "Tamamlanan Görevler",
-        taskTemplates: "Görev ��ablonları",
+        taskTemplates: "Görev Şablonları",
         invoices: "Faturalar",
         payments: "Ödemeler",
         expenses: "Giderler",
