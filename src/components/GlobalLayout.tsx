@@ -1518,6 +1518,26 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
       ],
     },
     {
+      id: "door-access",
+      title: currentT.sidebar.doorAccess,
+      icon: Door,
+      hasSubmenu: true,
+      submenu: [
+        {
+          id: "door-entry",
+          title: currentT.sidebar.doorEntry,
+          icon: LogIn,
+          path: "door-entry",
+        },
+        {
+          id: "door-exit",
+          title: currentT.sidebar.doorExit,
+          icon: DoorClosed,
+          path: "door-exit",
+        },
+      ],
+    },
+    {
       id: "system",
       title: currentT.sidebar.system,
       icon: Settings,
