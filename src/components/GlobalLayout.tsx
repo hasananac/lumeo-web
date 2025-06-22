@@ -1361,16 +1361,20 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
   };
 
   const handleProfileMenuClick = (action: string) => {
+    console.log("Profile menu clicked:", action);
     setShowProfileDropdown(false);
 
     switch (action) {
       case "profile":
+        console.log("Calling onShowProfile");
         onShowProfile();
         break;
       case "settings":
+        console.log("Calling onShowSettings");
         onShowSettings();
         break;
       case "logout":
+        console.log("Calling onLogout");
         onLogout();
         break;
     }
