@@ -977,7 +977,7 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
         viewAllResults: "Tüm sonuçları gör",
         categories: {
           pages: "Sayfalar",
-          users: "Kullanıc��lar",
+          users: "Kullanıcılar",
           projects: "Projeler",
           documents: "Belgeler",
           tasks: "Görevler",
@@ -1548,9 +1548,9 @@ const GlobalLayout: React.FC<GlobalLayoutProps> = ({
               className="p-1.5 hover:bg-slate-100 rounded-md transition-colors duration-200 flex-shrink-0"
             >
               {isSidebarExpanded ? (
-                <Menu className="w-4 h-4 text-slate-600" />
+                <ChevronLeft className="w-4 h-4 text-slate-600" />
               ) : (
-                <ChevronRight className="w-4 h-4 text-slate-600" />
+                <Menu className="w-4 h-4 text-slate-600" />
               )}
             </button>
           </div>
