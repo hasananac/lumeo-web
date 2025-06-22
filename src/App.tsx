@@ -92,6 +92,9 @@ type PageType =
   | "messages"
   | "meetings"
   | "documents"
+  // Door Access
+  | "door-entry"
+  | "door-exit"
   // System
   | "system"
   | "security"
