@@ -1070,7 +1070,7 @@ const Dashboard: React.FC<DashboardProps> = ({
       {/* Usage Tips Panel */}
       <div className="w-64 flex-shrink-0">
         <div className="sticky top-6">
-          <div className="glass-card rounded-2xl p-4 border border-slate-200/50 max-h-[calc(100vh-8rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-teal-500 scrollbar-track-teal-100 hover:scrollbar-thumb-teal-600">
+          <div className="glass-card rounded-2xl p-4 border border-slate-200/50 max-h-[calc(100vh-8rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-teal-500 scrollbar-track-teal-50 hover:scrollbar-thumb-teal-600 scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
             {/* Header */}
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-lg flex items-center justify-center">
