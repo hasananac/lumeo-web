@@ -1175,7 +1175,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                 return (
                   <div
                     key={index}
-                    className="p-3 bg-gradient-to-r from-white to-slate-50/80 rounded-lg border border-slate-200/40 hover:shadow-md hover:border-slate-300/60 transition-all duration-300 group cursor-pointer"
+                    className="p-3 bg-gradient-to-r from-white to-slate-50/80 rounded-lg border border-slate-200/40 hover:shadow-lg hover:border-teal-300/60 hover:bg-gradient-to-r hover:from-teal-50/30 hover:to-slate-50/80 transition-all duration-300 group cursor-pointer transform hover:-translate-y-0.5"
                   >
                     <div className="flex items-start space-x-2">
                       <div
