@@ -1223,15 +1223,15 @@ const Dashboard: React.FC<DashboardProps> = ({
             </div>
 
             {/* Footer */}
-            <div className="mt-6 pt-4 border-t border-slate-200/50">
-              <div className="flex items-center justify-between text-xs text-slate-500">
-                <span>
+            <div className="mt-4 pt-3 border-t border-slate-200/50">
+              <div className="text-center">
+                <p className="text-xs text-slate-500 mb-2">
                   {language === "tr"
-                    ? "Daha fazla yardım için"
-                    : "For more help"}
-                </span>
-                <button className="text-teal-600 hover:text-teal-700 font-medium transition-colors duration-200">
-                  {language === "tr" ? "Rehber >" : "Guide >"}
+                    ? "Bu ipuçları güncellenecektir"
+                    : "Tips will be updated"}
+                </p>
+                <button className="w-full py-2 text-xs text-teal-600 hover:text-white hover:bg-teal-600 border border-teal-200 hover:border-teal-600 rounded-lg font-medium transition-all duration-200">
+                  {language === "tr" ? "📚 Detaylı Rehber" : "📚 Full Guide"}
                 </button>
               </div>
             </div>
