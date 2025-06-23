@@ -1066,6 +1066,124 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Usage Tips Panel */}
+      <div className="w-80 flex-shrink-0">
+        <div className="sticky top-6">
+          <div className="glass-card rounded-2xl p-6 border border-slate-200/50">
+            {/* Header */}
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-xl flex items-center justify-center">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-800">
+                  {language === "tr" ? "Kullanım İpuçları" : "Usage Tips"}
+                </h3>
+                <p className="text-xs text-slate-500">
+                  {language === "tr" ? "Ana Sayfa Rehberi" : "Dashboard Guide"}
+                </p>
+              </div>
+            </div>
+
+            {/* Tips List */}
+            <div className="space-y-4">
+              {[
+                {
+                  icon: Target,
+                  title:
+                    language === "tr"
+                      ? "Hızlı Proje Oluşturma"
+                      : "Quick Project Creation",
+                  desc:
+                    language === "tr"
+                      ? "Yeni Proje butonuna tıklayarak hızlıca proje oluşturabilirsiniz."
+                      : "Click New Project button to quickly create projects.",
+                  color: "bg-blue-500",
+                },
+                {
+                  icon: BarChart3,
+                  title:
+                    language === "tr"
+                      ? "İstatistik Kartları"
+                      : "Statistics Cards",
+                  desc:
+                    language === "tr"
+                      ? "Üstteki kartlara tıklayarak detaylı raporlara erişebilirsiniz."
+                      : "Click top cards to access detailed reports.",
+                  color: "bg-emerald-500",
+                },
+                {
+                  icon: Clock,
+                  title:
+                    language === "tr" ? "Son Aktiviteler" : "Recent Activities",
+                  desc:
+                    language === "tr"
+                      ? "Son aktivitelerinizi takip ederek işlerinizi kontrol edebilirsiniz."
+                      : "Track your recent activities to stay in control.",
+                  color: "bg-purple-500",
+                },
+                {
+                  icon: Bell,
+                  title: language === "tr" ? "Bildirimler" : "Notifications",
+                  desc:
+                    language === "tr"
+                      ? "Üst menüdeki zil ikonundan bildirimlerinizi görüntüleyebilirsiniz."
+                      : "View notifications from bell icon in top menu.",
+                  color: "bg-amber-500",
+                },
+                {
+                  icon: Search,
+                  title: language === "tr" ? "Hızlı Arama" : "Quick Search",
+                  desc:
+                    language === "tr"
+                      ? "Üst menüdeki arama çubuğunu kullanarak her şeyi bulabilirsiniz."
+                      : "Use search bar in top menu to find anything quickly.",
+                  color: "bg-teal-500",
+                },
+              ].map((tip, index) => {
+                const IconComponent = tip.icon;
+                return (
+                  <div
+                    key={index}
+                    className="p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/30 hover:shadow-sm transition-all duration-300 group"
+                  >
+                    <div className="flex items-start space-x-3">
+                      <div
+                        className={`w-8 h-8 ${tip.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                      >
+                        <IconComponent className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-sm font-semibold text-slate-800 mb-1">
+                          {tip.title}
+                        </h4>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          {tip.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Footer */}
+            <div className="mt-6 pt-4 border-t border-slate-200/50">
+              <div className="flex items-center justify-between text-xs text-slate-500">
+                <span>
+                  {language === "tr"
+                    ? "Daha fazla yardım için"
+                    : "For more help"}
+                </span>
+                <button className="text-teal-600 hover:text-teal-700 font-medium transition-colors duration-200">
+                  {language === "tr" ? "Rehber >" : "Guide >"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
