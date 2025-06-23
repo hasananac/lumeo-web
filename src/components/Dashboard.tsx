@@ -1072,16 +1072,16 @@ const Dashboard: React.FC<DashboardProps> = ({
         <div className="sticky top-6">
           <div className="glass-card rounded-2xl p-4 border border-slate-200/50 max-h-[calc(100vh-8rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-400 scrollbar-track-slate-200">
             {/* Header */}
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-xl flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-lg flex items-center justify-center">
+                <Zap className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-slate-800">
+                <h3 className="text-base font-bold text-slate-800">
                   {language === "tr" ? "Kullanım İpuçları" : "Usage Tips"}
                 </h3>
                 <p className="text-xs text-slate-500">
-                  {language === "tr" ? "Ana Sayfa Rehberi" : "Dashboard Guide"}
+                  {language === "tr" ? "Hızlı Başlangıç" : "Quick Start"}
                 </p>
               </div>
             </div>
