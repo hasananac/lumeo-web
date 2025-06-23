@@ -1087,77 +1087,131 @@ const Dashboard: React.FC<DashboardProps> = ({
             </div>
 
             {/* Tips List */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               {[
                 {
                   icon: Target,
                   title:
                     language === "tr"
-                      ? "Hızlı Proje Oluşturma"
-                      : "Quick Project Creation",
+                      ? "Yeni Proje Başlat"
+                      : "Start New Project",
                   desc:
                     language === "tr"
-                      ? "Yeni Proje butonuna tıklayarak hızlıca proje oluşturabilirsiniz."
-                      : "Click New Project button to quickly create projects.",
+                      ? '"Yeni Proje" butonuna tıklayın ve hedeflerinizi belirleyin. Proje şablonları kullanarak zamandan tasarruf edin.'
+                      : 'Click "New Project" and set your goals. Use project templates to save time.',
                   color: "bg-blue-500",
+                  badge: language === "tr" ? "Temel" : "Basic",
                 },
                 {
                   icon: BarChart3,
                   title:
                     language === "tr"
-                      ? "İstatistik Kartları"
-                      : "Statistics Cards",
+                      ? "Performans Takibi"
+                      : "Performance Tracking",
                   desc:
                     language === "tr"
-                      ? "Üstteki kartlara tıklayarak detaylı raporlara erişebilirsiniz."
-                      : "Click top cards to access detailed reports.",
+                      ? "İstatistik kartlarındaki sayılara tıklayarak detaylı analiz ve grafiklere ulaşabilirsiniz."
+                      : "Click on statistics cards numbers for detailed analytics and charts.",
                   color: "bg-emerald-500",
+                  badge: language === "tr" ? "Önemli" : "Important",
                 },
                 {
-                  icon: Clock,
+                  icon: Users,
                   title:
-                    language === "tr" ? "Son Aktiviteler" : "Recent Activities",
+                    language === "tr" ? "Ekip Yönetimi" : "Team Management",
                   desc:
                     language === "tr"
-                      ? "Son aktivitelerinizi takip ederek işlerinizi kontrol edebilirsiniz."
-                      : "Track your recent activities to stay in control.",
+                      ? 'Sol menüden "Çalışanlar" bölümüne giderek ekip üyelerinizi yönetebilir, yetkilendirmeler yapabilirsiniz.'
+                      : 'Go to "Employees" from left menu to manage team members and permissions.',
                   color: "bg-purple-500",
+                  badge: language === "tr" ? "Gelişmiş" : "Advanced",
                 },
                 {
                   icon: Bell,
-                  title: language === "tr" ? "Bildirimler" : "Notifications",
+                  title:
+                    language === "tr"
+                      ? "Akıllı Bildirimler"
+                      : "Smart Notifications",
                   desc:
                     language === "tr"
-                      ? "Üst menüdeki zil ikonundan bildirimlerinizi görüntüleyebilirsiniz."
-                      : "View notifications from bell icon in top menu.",
+                      ? "Sağ üstteki zil simgesi size önemli olayları bildirir. Bildirimleri filtreleyebilir ve öncelik verebilirsiniz."
+                      : "Bell icon shows important events. You can filter and prioritize notifications.",
                   color: "bg-amber-500",
+                  badge: language === "tr" ? "İpucu" : "Tip",
                 },
                 {
                   icon: Search,
-                  title: language === "tr" ? "Hızlı Arama" : "Quick Search",
+                  title: language === "tr" ? "Küresel Arama" : "Global Search",
                   desc:
                     language === "tr"
-                      ? "Üst menüdeki arama çubuğunu kullanarak her şeyi bulabilirsiniz."
-                      : "Use search bar in top menu to find anything quickly.",
+                      ? "Üst arama çubuğuna yazarak projeler, görevler, kişiler ve dosyalarda arama yapabilirsiniz."
+                      : "Use top search bar to find projects, tasks, people and files instantly.",
                   color: "bg-teal-500",
+                  badge: language === "tr" ? "Pro" : "Pro",
+                },
+                {
+                  icon: Settings,
+                  title:
+                    language === "tr" ? "Kişiselleştirme" : "Customization",
+                  desc:
+                    language === "tr"
+                      ? "Sağ üst profil menüsünden ayarlara girerek tema, dil ve bildirim tercihlerinizi değiştirebilirsiniz."
+                      : "Access settings from top-right profile menu to change theme, language and notification preferences.",
+                  color: "bg-slate-500",
+                  badge: language === "tr" ? "Ayar" : "Setup",
+                },
+                {
+                  icon: Briefcase,
+                  title: language === "tr" ? "İş Akışları" : "Workflows",
+                  desc:
+                    language === "tr"
+                      ? 'Sol menüdeki "İşler" bölümünden iş süreçlerinizi otomatikleştirebilir ve şablonlar oluşturabilirsiniz.'
+                      : 'Use "Jobs" section from left menu to automate workflows and create templates.',
+                  color: "bg-indigo-500",
+                  badge: language === "tr" ? "Otomasyon" : "Automation",
                 },
               ].map((tip, index) => {
                 const IconComponent = tip.icon;
                 return (
                   <div
                     key={index}
-                    className="p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200/30 hover:shadow-sm transition-all duration-300 group"
+                    className="p-3 bg-gradient-to-r from-white to-slate-50/80 rounded-lg border border-slate-200/40 hover:shadow-md hover:border-slate-300/60 transition-all duration-300 group cursor-pointer"
                   >
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start space-x-2">
                       <div
-                        className={`w-8 h-8 ${tip.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                        className={`w-6 h-6 ${tip.color} rounded-md flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
                       >
-                        <IconComponent className="w-4 h-4 text-white" />
+                        <IconComponent className="w-3 h-3 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-slate-800 mb-1">
-                          {tip.title}
-                        </h4>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <h4 className="text-xs font-semibold text-slate-800">
+                            {tip.title}
+                          </h4>
+                          <span
+                            className={`px-1.5 py-0.5 text-xs font-medium rounded-full ${
+                              tip.badge === "Temel" || tip.badge === "Basic"
+                                ? "bg-blue-100 text-blue-700"
+                                : tip.badge === "Önemli" ||
+                                    tip.badge === "Important"
+                                  ? "bg-green-100 text-green-700"
+                                  : tip.badge === "Gelişmiş" ||
+                                      tip.badge === "Advanced"
+                                    ? "bg-purple-100 text-purple-700"
+                                    : tip.badge === "Pro"
+                                      ? "bg-teal-100 text-teal-700"
+                                      : tip.badge === "İpucu" ||
+                                          tip.badge === "Tip"
+                                        ? "bg-amber-100 text-amber-700"
+                                        : tip.badge === "Ayar" ||
+                                            tip.badge === "Setup"
+                                          ? "bg-slate-100 text-slate-700"
+                                          : "bg-indigo-100 text-indigo-700"
+                            }`}
+                          >
+                            {tip.badge}
+                          </span>
+                        </div>
                         <p className="text-xs text-slate-600 leading-relaxed">
                           {tip.desc}
                         </p>
